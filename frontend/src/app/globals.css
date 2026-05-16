@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-maroon: #800000;
+  --color-maroon-dark: #600000;
+  --color-maroon-light: #a00000;
+  
+  --color-gray-dark: #1a1a1a;
+  --color-gray-mid: #333333;
+  --color-gray-light: #f8f8f8;
+  
+  --font-sans: var(--font-outfit), "Inter", system-ui, sans-serif;
+  
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --border: #f0f0f0;
+  --primary: #800000;
+}
+
+/* Force light theme only */
+html {
+  color-scheme: light;
+}
+
+body {
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border-radius: 10px;
+  border: 3px solid #f8f8f8;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #800000;
+}
+
+/* Global cursor improvements */
+button, 
+a, 
+input[type="submit"],
+select,
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.2s ease-in-out 0s 2;
+}
+
+/* Line clamp for description */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
